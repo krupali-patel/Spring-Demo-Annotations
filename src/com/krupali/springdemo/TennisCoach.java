@@ -6,10 +6,12 @@ import javax.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //@Component("thatSillyCoach")
 @Component
+//@Scope("prototype")
 public class TennisCoach implements Coach {
 //	@Autowired
 //	@Qualifier("randomFortuneService")
@@ -26,7 +28,7 @@ public class TennisCoach implements Coach {
 	
 	
 	@Autowired
-	public  TennisCoach(@Qualifier("fileFortuneService")FortuneService thefortuneService) {
+	public  TennisCoach(@Qualifier("happyFortuneService")FortuneService thefortuneService) {
 		System.out.println("inside constructor using @autowired and @qualifier");
 		fortuneService = thefortuneService;
 	}

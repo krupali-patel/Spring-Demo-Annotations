@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,6 +19,15 @@ public class FileFortuneService implements FortuneService {
 	private Random myRandom = new Random();
 	
 	public FileFortuneService() {
+		
+		System.out.println("insdie FileFortuneService constructor");
+		
+	}
+	
+	@PostConstruct
+	public void myInitMethod()
+	{
+		System.out.println("inside init of file fortune service");
 		File data = new File(fileName);
 		System.out.println("Reading fortunes from file: " + data);
 		System.out.println("Does file exists?:"+data.exists());
@@ -40,7 +51,6 @@ public class FileFortuneService implements FortuneService {
 			}
 		
 		}
-		
 		
 	}
 	

@@ -11,6 +11,9 @@ public class RandomFortuneService implements FortuneService {
 	private String[] data = {"randomfortune1","randomfortune2","randomfortune3"};
 	private Random myRandom = new Random();
 	
+	 public RandomFortuneService() {
+	System.out.println("I am inside RandomFortuneService constructor");	
+	 }
 	
 	@Override
 	public String getFortune() {
